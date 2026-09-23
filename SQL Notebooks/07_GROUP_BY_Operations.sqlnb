@@ -2,33 +2,6 @@ cells:
   - kind: 2
     value: |
       SELECT
-      column_list
-      FROM
-      T
-      GROJP BY c1,c2,c3;
-    languageId: oracle-sql
-  - kind: 2
-    value: |
-      SELECT
-      column_list
-      FROM
-      T
-      WHERE
-      condition
-      GROUP BY c1,c2,c3;
-    languageId: oracle-sql
-  - kind: 2
-    value: |
-      SELECT
-      column_list
-      FROM
-      T
-      GROUP BY
-      ROLLUP(c1,c2,c3);
-    languageId: oracle-sql
-  - kind: 2
-    value: |
-      SELECT
       status
       FROM
       orders
@@ -58,7 +31,7 @@ cells:
     value: |
       SELECT
       name,
-      COUNNT( order_id )
+      COUNT( order_id )
       FROM
       orders
       INNER JOIN customers
@@ -66,7 +39,7 @@ cells:
       GROUP BY
       name
       ORDER BY
-      nane;
+      name;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -92,7 +65,7 @@ cells:
       GROUP BY
       name
       ORDER BY
-      nane;
+      name;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -125,7 +98,7 @@ cells:
     value: |
       SELECT
       order_id,
-      SUM( unit_price • quantity ) order_value
+      SUM( unit_price * quantity ) order_value
       FROM
       order_items
       GROUP BY

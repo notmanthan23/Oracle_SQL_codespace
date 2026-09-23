@@ -391,7 +391,7 @@ cells:
     value: |
       SELECT
            first_name forename,
-           last_namæ surnanæ
+           last_name surname
       FROM
       employees;
     languageId: oracle-sql
@@ -417,10 +417,13 @@ cells:
   - kind: 2
     value: |
       SELECT
-           first name  || ' ' || last_name
+           first_name  || ' ' || last_name
       FROM
          employees;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Using Oracle column alias for expression"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -448,7 +451,7 @@ cells:
     languageId: oracle-sql
   - kind: 2
     value: |
-      table_name AS table_alias
+      table_name_AS table_alias
       table_name table_alias
     languageId: oracle-sql
   - kind: 2

@@ -54,7 +54,7 @@ cells:
   - kind: 2
     value: |
       CREATE TABLE sales (
-      customer id NUMBER,
+      customer_id NUMBER,
       product_id NUMBER,
       order_date DATE NOT NULL,
       total NUMBER(9,2) DEFAULT O NOT NULL,
@@ -65,16 +65,16 @@ cells:
     languageId: oracle-sql
   - kind: 2
     value: |
-      INSERT INTO sales (custoner_id, product_id, order_date,total)
+      INSERT INTO sales(customer_id, product_id, order_date,total)
       SELECT customer_id,
       product_id,
       order_date,
       SUM(quantity * unit_price) amount
       FROM orders
       INNER JOIN order_items USING(order_id)
-      MIERE status = 'Shipped '
-      GROUP BY custoner_id,
-      Product_id,
+      WHERE status = 'Shipped'
+      GROUP BY customer_id,
+      product_id,
       order_date;
     languageId: oracle-sql
   - kind: 2
@@ -102,7 +102,7 @@ cells:
       order_date,
       SUM(quantity * unit_price) amount
       FROM orders
-      INNER JOIN order_itens USING(order_id)
+      INNER JOIN order_items USING(order_id)
       WHERE status = 'Shipped' AND EXTRACT(year from order_date) = 2017
       GROUP BY customer_id,
       product_id,

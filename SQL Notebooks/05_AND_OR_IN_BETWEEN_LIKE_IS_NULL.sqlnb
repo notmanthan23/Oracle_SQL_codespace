@@ -27,7 +27,7 @@ cells:
     value: |
       SELECT
            order_id,
-           customer_id.
+           customer_id,
            status,
            order_date
       FROM
@@ -39,6 +39,9 @@ cells:
       ORDER BY
              order_date;
     languageId: oracle-sql
+  - kind: 1
+    value: "#  Oracle AND to combine more than two Boolean expressions"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -50,10 +53,13 @@ cells:
          orders
       WHERE
          status = 'Pending'
-         OR status 'Canceled '
+         OR status = 'Canceled '
       ORDER BY
       order_date DESC;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Using Oracle OR operator to combine two Boolean expressions example"
+    languageId: markdown
   - kind: 2
     value: |
       status 'pending'
@@ -74,6 +80,10 @@ cells:
       ORDER BY
             order_date DESC;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Oracle OR operator to combine more than two Boolean expressions
+      example"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -85,12 +95,17 @@ cells:
       FROM
          orders
       WHERE
-      (status = 'Canceled'
-      status 'Pending')
+      (
+         status = 'Canceled' 
+         OR status = 'Pending'
+         )
       AND customer_id = 44
       ORDER BY
           order_date;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Using Oracle OR operator to combine with AND operator"
+    languageId: markdown
   - kind: 2
     value: expression [NOT] IN (vl,v2,...)
     languageId: oracle-sql
@@ -112,7 +127,7 @@ cells:
     value: |
       SELECT
            order_id,
-           custær_id,
+           customer_id,
            status,
            salesman_id
       FROM
@@ -122,6 +137,9 @@ cells:
       ORDER BY
       order_id;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Oracle IN"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -136,11 +154,14 @@ cells:
       ORDER BY
       order_id;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Oracle NOT IN"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
-          enployee_id ,
-          first_name
+          employee_id ,
+          first_name,
           last_name
       FROM
          employees
@@ -155,6 +176,9 @@ cells:
       ORDER BY
          first_Name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Oracle IN subquery "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -178,6 +202,9 @@ cells:
       From
       orders);
     languageId: oracle-sql
+  - kind: 1
+    value: "#  Oracle NOT IN subquery "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -191,7 +218,7 @@ cells:
       61,
       62)
       ORDER BY
-          customer id;
+          customer_id;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -202,12 +229,15 @@ cells:
       FROM
          orders
       WHERE
-         salesman id = 60
-         OR salesman id = 61
-         OR salesman id = 62
+         salesman_id = 60
+         OR salesman_id = 61
+         OR salesman_id = 62
       ORDER BY
       customer_id;
     languageId: oracle-sql
+  - kind: 1
+    value: "#    Oracle IN vs. OR"
+    languageId: markdown
   - kind: 2
     value: salesman_id NOT IN (60,61,62);
     languageId: oracle-sql
@@ -231,10 +261,13 @@ cells:
       FROM
           products
       WHERE
-         standard_cost BETÆEN 500 AND 600
+         standard_cost BETWEEN 500 AND 600
       ORDER BY
          standard_cost ;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   Oracle BETWEEN numeric values"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -247,6 +280,9 @@ cells:
       ORDER BY
          product_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#    Oracle BETWEEN numeric values"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -257,10 +293,13 @@ cells:
       FROM
          orders
       WHERE
-         order_date BETWEEN '2016-12-01' AND DATE '2016-12-31'
+         order_date BETWEEN DATE '2016-12-01' AND DATE '2016-12-31'
       ORDER BY
          order_date ;
     languageId: oracle-sql
+  - kind: 1
+    value: "#  Oracle BETWEEN dates"
+    languageId: markdown
   - kind: 2
     value: expresion [NOT] LIKE pattern [ ESCAPE escape_characters]
     languageId: oracle-sql
@@ -268,15 +307,18 @@ cells:
     value: |
       SELECT
           first_name,
-          last_names
+          last_name,
           phone
       FROM
          contacts
       WHERE
-         last name LIKE 'St%'
+         last_name LIKE 'St%'
       ORDER BY
          last_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#   % wildcard character "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -290,6 +332,9 @@ cells:
       ORDER BY
           last_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#  % wildcard character "
+    languageId: markdown
   - kind: 2
     value: "%er"
     languageId: oracle-sql
@@ -312,6 +357,9 @@ cells:
       ORDER BY
         first_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#  % wildcard character "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -323,6 +371,9 @@ cells:
       ORDER BY
         first_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#  % wildcard character "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -337,6 +388,9 @@ cells:
       ORDER BY
          first_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "#  _ wildcard character"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT

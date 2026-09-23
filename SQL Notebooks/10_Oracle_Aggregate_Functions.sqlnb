@@ -2,22 +2,22 @@ cells:
   - kind: 2
     value: |
       SELECT
-      ROUND(AVG(standard _ cost ), 2) avg_std_cost
+      ROUND(AVG(standard_cost ), 2) avg_std_cost
       FROM
       products;
     languageId: oracle-sql
   - kind: 2
     value: |
       SELECT
-      ROUND(AVG(standard-cost),2) avg_std_cost.
-      ROUND(AVG(list_price ) . 2) avg_list_price
+      ROUND(AVG(standard_cost),2) avg_std_cost,
+      ROUND(AVG(list_price),2) avg_list_price
       FROM
       products;
     languageId: oracle-sql
   - kind: 2
     value: |
       SELECT
-      RCJND(
+      ROUND(
       AVG( DISTINCT list_price ),
       2
       ) avg_list_price
@@ -29,7 +29,7 @@ cells:
       SELECT
       category_id,
       ROUND(
-      AVG( list_pnce ).
+      AVG( list_price ),
       2
       ) avg_list_price
       FROM
@@ -40,8 +40,8 @@ cells:
   - kind: 2
     value: |
       SELECT
-      category_name
-      ROUND( AVG(list_price),2 ) avg_list_price
+      category_name,
+      ROUND(AVG(list_price),2 ) avg_list_price
       FROM
       products
       INNER JOIN product_categories
@@ -56,13 +56,13 @@ cells:
       SELECT
       category_name,
       ROUND(
-      AVG( list-price),
+      AVG( list_price),
       2
       ) avg_list_price
       FROM
       products
       INNER JOIN product_categories
-      USING(category-id)
+      USING(category_id)
       GROUP BY
       category_name
       HAVING
@@ -73,7 +73,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-      ROUND( AVG( avg_list_price ) . 2) avg_of_avg
+      ROUND( AVG( avg_list_price ), 2) avg_of_avg
       FROM
       (
       SELECT
@@ -83,19 +83,6 @@ cells:
       GROUP BY
       category_id
       );
-    languageId: oracle-sql
-  - kind: 2
-    value: |
-      CREATE TABLE tests (
-      employee_id NUMBER PRIYARY KEY.
-      score NUMBER(3,1)
-      );
-      INSERT INTO tests(employee_id, score) VALIES(1, 95);
-      INSERT INTO tests(employee_id, score) VALIES(2, 70);
-      INSERT INTO tests(employee_id, score) VALIES(3, 60);
-      INSERT INTO tests(employee_id, score) VALIES(4, null);
-
-      SELECT * FROM tests;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -193,9 +180,9 @@ cells:
       category_name,
       COUNT( product_id )
       FROM
-      product_cateqories
+      PRODUCT_CATEGORIES
        LEFT JOIN products
-      USING(category-id)
+      USING(category_id)
       GROUP BY
       category_name
       HAVING
@@ -211,7 +198,7 @@ cells:
       FROM
       contacts
       GROUP BY
-      last_nane
+      last_name
       HAVING
       COUNT( last_name)> 1
       ORDER BY
@@ -222,7 +209,7 @@ cells:
       SELECT
       MAX(list_price)
       FROM
-      products:
+      products;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -243,7 +230,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-      category_ld,
+      category_id,
       MAX(list_price )
       FROM
       products
@@ -308,14 +295,14 @@ cells:
   - kind: 2
     value: |
       SELECT
-      category_id.
+      category_id,
       MIN( list_price )
       FROM
       products
       GROUP BY
-      category_ld
+      category_id
       ORDER BY
-      category_ld;
+      category_id;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -352,7 +339,7 @@ cells:
       SELECT
       SUM( quantity )
       FROM
-      order_itens;
+      order_items;
     languageId: oracle-sql
   - kind: 2
     value: |
@@ -381,7 +368,7 @@ cells:
   - kind: 2
     value: |
       SELECT
-      order-id,
+      order_id,
       SUM( quantity * unit_price ) order_total
       FROM
       order_items
@@ -396,7 +383,7 @@ cells:
     value: |
       SELECT
       product_name,
-      SUM( quantity * untt_price ) sales
+      SUM( quantity * unit_price ) sales
       FROM
       order_items
       INNER JOIN products
