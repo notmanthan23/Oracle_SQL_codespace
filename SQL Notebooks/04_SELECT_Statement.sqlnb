@@ -4,17 +4,20 @@ cells:
       SELECT
       name
       FROM
-      custcmers;
+      customers;
     languageId: oracle-sql
   - kind: 2
     value: |
       SELECT
       customer_id,
-      name
+      name,
       credit_limit
       FROM
       customers;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Intro to select statement"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -26,16 +29,25 @@ cells:
       FROM
       customers;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Intro to select statement"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
       UPPER( 'This is a string')
-      From
-      what_table;
+      From 
+      customers;
     languageId: oracle-sql
+  - kind: 1
+    value: "###  Dual Table"
+    languageId: markdown
   - kind: 2
     value: SELECT * FROM dual;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Intro to select statement"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -43,27 +55,19 @@ cells:
       FROM
       dual;
     languageId: oracle-sql
+  - kind: 1
+    value: "# Dual table"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
-      (10 + s)/2
+      (10 + 5)/2
       FROM
       dual;
     languageId: oracle-sql
-  - kind: 2
-    value: |
-      SELECT
-      column_1,
-      column_2,
-      column_3,
-      ...
-      FROM
-      table_nane
-      ORDER BY
-      column_1 [ASC I DESCJ [NULLS FIRST I NULLS LAST],
-      column_1 [ASC I DESC] [NULLS FIRST I NULLS LAST],
-      ...
-    languageId: oracle-sql
+  - kind: 1
+    value: "## Select Clause"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -73,6 +77,9 @@ cells:
       FROM
       customers;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Introduction to Oracle ORDER BY clause"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -84,12 +91,9 @@ cells:
       ORDER BY
       name ASC;
     languageId: oracle-sql
-  - kind: 2
-    value: ORDER BY name ASC
-    languageId: oracle-sql
-  - kind: 2
-    value: ORDER BY name
-    languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows by a column"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -101,6 +105,9 @@ cells:
       ORDER BY
       name DESC;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows by a column"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -112,6 +119,9 @@ cells:
           first_name,
           last_name DESC;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows by multiple columns"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -135,10 +145,13 @@ cells:
             city ,
             state;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows with NULL values "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
-          cenmtry_id,
+        country_id,
       city,
       state
       FROM
@@ -146,6 +159,9 @@ cells:
       ORDER BY
       state ASC NULLS FIRST;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows with NULL values "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -153,11 +169,14 @@ cells:
          city,
          state
       FROM
-         locatims
+         locations
       ORDER BY
          state
       ASC NULLS LAST;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows with NULL values "
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -166,8 +185,11 @@ cells:
       FROM
            customers
       ORDER BY
-      UPPER(name),
+      UPPER(name);
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting rows by the result of a function"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -180,6 +202,9 @@ cells:
       ORDER BY
           order_date DESC;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Sorting by date"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT DISTINCT colunn_l
@@ -203,6 +228,9 @@ cells:
       ORDER BY
           first_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Oracle SELECT DISTINCT one column"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT DISTINCT
@@ -212,6 +240,9 @@ cells:
       ORDER BY
       first_name;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Oracle SELECT DISTINCT one column"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -222,6 +253,9 @@ cells:
       ORDER BY
           product_id;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Oracle SELECT DISTINCT multiple columns"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -231,6 +265,9 @@ cells:
       ORDER BY
            state NULLS FIRST;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Oracle SELECT DISTINCT multiple columns"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -252,8 +289,11 @@ cells:
        From
           products
       WHERE
-          product_name = 'Kingstom';
+          product_name ='Kingston';
     languageId: oracle-sql
+  - kind: 1
+    value: "## Selecting rows by using a simple equality operator"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -264,6 +304,9 @@ cells:
       WHERE
             list_price > 500;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Select rows using comparison operator"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -275,6 +318,9 @@ cells:
             list_price > 500
       AND category_id = 4;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Select rows that meet some conditions"
+    languageId: markdown
   - kind: 2
     value: |
       SELECT
@@ -287,6 +333,9 @@ cells:
       ORDER BY
             list_price;
     languageId: oracle-sql
+  - kind: 1
+    value: "## Selecting rows that have a value between two values"
+    languageId: markdown
   - kind: 2
     value: |
       list_price BETWEEN 650 AND 680

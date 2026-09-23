@@ -291,7 +291,7 @@ cells:
           last_name;
     languageId: oracle-sql
   - kind: 2
-    value: '%er'
+    value: "%er"
     languageId: oracle-sql
   - kind: 2
     value: |
